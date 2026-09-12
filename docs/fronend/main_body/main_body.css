@@ -1,0 +1,260 @@
+#main_body_div {
+    width: 100%;
+    max-width: 900px;
+    height: calc(100vh - 100px);
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+
+    border: 2px solid;
+    box-sizing: border-box;
+
+    min-width: 0;
+    min-height: 0;
+}
+
+.main_body_div1 {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: 50px minmax(0, 1fr) auto;
+
+    min-width: 0;
+    min-height: 0;
+
+    border: 2px solid;
+    box-sizing: border-box;
+}
+
+
+/* ========================= */
+/*         STATUS            */
+/* ========================= */
+
+#status_div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 0 15px;
+
+    border: 2px solid;
+    box-sizing: border-box;
+
+    min-width: 0;
+}
+
+
+/* ========================= */
+/*       CHAT OUTPUT         */
+/* ========================= */
+
+#output_div {
+    display: flex;
+
+    padding: 10px;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* ========================= */
+/*        TEXT AREA          */
+/* ========================= */
+
+#text_area {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    box-sizing: border-box;
+
+    resize: none;
+    overflow-y: auto;
+
+    background-color: #111;
+    color: #f0c929;
+
+    border: 2px solid #c9a227;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+/* ========================= */
+/*        INPUT AREA         */
+/* ========================= */
+
+#input_div {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 10px;
+    padding: 10px;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* Input */
+
+#input_div input {
+    flex: 1 1 auto;
+
+    width: 0;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    padding: 12px 15px;
+
+    border: 2px solid #c9a227;
+    border-radius: 10px;
+
+    background-color: #111;
+    color: #f0c929;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+#input_div input:focus {
+    border-color: #ffd84d;
+
+    box-shadow:
+        0 0 8px rgba(255, 216, 77, 0.35);
+}
+
+
+/* Send button */
+
+#input_div button {
+    flex: 0 0 100px;
+
+    padding: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    border: 2px solid #c9a227;
+    border-radius: 10px;
+
+    background-color: #1a1a1a;
+    color: #f0c929;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#input_div button:hover {
+    background-color: #c9a227;
+    color: #111;
+}
+
+#input_div button:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================= */
+/*       PHONE / SMALL       */
+/* ========================= */
+
+@media (max-width: 600px) {
+
+    #main_body_div {
+        width: 100%;
+        max-width: none;
+
+        height: calc(100vh - 100px);
+
+        border: none;
+    }
+
+    .main_body_div1 {
+        height: 100%;
+
+        grid-template-rows:
+            50px
+            minmax(0, 1fr)
+            auto;
+
+        border: none;
+    }
+
+
+    /* Status */
+
+    #status_div {
+        padding: 0 8px;
+    }
+
+
+    /* Chat */
+
+    #output_div {
+        padding: 6px;
+    }
+
+    #text_area {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+
+    /* Input */
+
+    #input_div {
+        padding: 6px;
+        gap: 5px;
+    }
+
+    #input_div input {
+        flex: 1 1 auto;
+
+        width: 0;
+        min-width: 0;
+
+        padding: 9px;
+
+        font-size: 13px;
+    }
+
+
+    /* Button */
+
+    #input_div button {
+        flex: 0 0 60px;
+
+        padding: 9px 5px;
+
+        font-size: 13px;
+    }
+}
