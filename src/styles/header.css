@@ -1,0 +1,90 @@
+body
+{
+    margin: 5px 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+}
+/* headers inside the div */
+.header_div
+{
+    display: flex;   
+    align-items: center;
+}
+.header_div:nth-child(1)
+{
+    /* border: 2px solid white; */
+    /* min-width:200px; */
+    justify-content: space-between;
+}
+.header_div:nth-child(2)
+{
+    /* flex-direction: ; */
+    text-decoration:wavy;
+}
+.header_div:nth-child(3)
+{
+    flex:0.2;
+    /* background-color: rebeccapurple; */
+}
+/* logo inside heaeder div1 */
+.img_header
+{
+    width: clamp(50px, 5vw, 100px);
+    height: auto;
+
+}
+/* main header  */
+#main_header_div
+{
+    flex:1 1 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: black;
+    /* background-color: red; */
+}
+@property --deg
+{
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+#main_header_div::after,#main_header_div::before
+{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width:100%;
+    background:conic-gradient(from var(--deg) at center,rgb(68, 239, 56),rgb(3, 3, 6),rgb(8, 228, 37));
+    border-radius: inherit;
+    z-index: -2;
+    padding: 2px;   
+    animation: autorotate 2s linear infinite; 
+}
+#Main_header_div::after
+{
+    filter: blur(10px);
+}
+@keyframes autorotate 
+{
+     to
+     {
+        --deg:360deg;
+     }
+ }
+/* animated border */
+
+/* main font for page  */
+.font_text
+{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media (max-width: 600px) 
+{
+    .font_text
+    {
+        font-size: 0.7rem
+    };
+}
